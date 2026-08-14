@@ -41,7 +41,6 @@ def main():
     guest = f"{tok['token']}_{tok['user_id']}"
     domains = si['data'].get('domains', []) or []
 
-    # 依次尝试系统下发的域名 + 默认域名
     bases = []
     for d in domains:
         d = d.rstrip('/')
@@ -66,5 +65,5 @@ def main():
             print(f"[debug] login failed on {base}: {e}", file=sys.stderr)
 
     raise SystemExit(f"login failed on all domains: {last_err}")
-    
-    main()
+
+main()
