@@ -66,6 +66,5 @@ def main():
             print(f"[debug] login failed on {base}: {e}", file=sys.stderr)
 
     raise SystemExit(f"login failed on all domains: {last_err}")
-
-if name == 'main':
+    
     main()
